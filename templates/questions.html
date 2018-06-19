@@ -1,0 +1,11 @@
+<!doctype html>
+<title>Questions</title>
+{% for question in questions %}
+<b>{{question.id}}</b>. {{ question.text }}
+<ul>
+  {% for opt in question.options %}
+  <li><input type="{{question.type}}" value="{{opt}}" name="question_{{question.id}}">{{ opt }}</li>
+  {% endfor %}
+  <li> <input type="submit" value="Submit"></li>
+</ul>
+{% endfor %}
